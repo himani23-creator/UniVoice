@@ -1,35 +1,70 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// import { useState } from "react";
+// import PostFeed from "./components/PostFeed";
+// import { PostDetail } from "./components/PostDetail";
+// import PostForm from "./components/PostForm";
+// import AdminDashboard from "./components/AdminDashboard";
+// import AnnouncementBanner from "./components/AnnouncementBanner";
+// import "./App.css";
 
-function App() {
-  const [count, setCount] = useState(0)
+// // Simple client-side "router" using state — replace with react-router if needed
+// type Page = "feed" | "create" | "detail" | "admin";
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+// function App() {
+//   const [page, setPage] = useState<Page>("feed");
+//   const [selectedPostId, setSelectedPostId] = useState<string | null>(null);
 
-export default App
+//   // Mock auth state — Somraj will replace this with real JWT context
+//   const mockUser = {
+//     userId: "user-001",
+//     name: "Krishna",
+//     role: "student" as const,
+//   };
+
+//   const handlePostClick = (postId: string) => {
+//     setSelectedPostId(postId);
+//     setPage("detail");
+//   };
+
+//   return (
+//     <div className="app">
+//       {/* Announcements banner — Himani's component */}
+//       <AnnouncementBanner />
+
+//       {/* Nav */}
+//       <nav className="nav">
+//         <span className="nav-logo">SCMS — Rishihood University</span>
+//         <div className="nav-links">
+//           <button onClick={() => setPage("feed")}>Posts</button>
+//           <button onClick={() => setPage("create")}>+ New Post</button>
+//           {mockUser.role === "admin" && (
+//             <button onClick={() => setPage("admin")}>Admin</button>
+//           )}
+//           <span className="nav-user">{mockUser.name}</span>
+//         </div>
+//       </nav>
+
+//       {/* Pages */}
+//       <main className="main">
+//         {page === "feed" && (
+//           <PostFeed onPostClick={handlePostClick} />
+//         )}
+//         {page === "create" && (
+//           <PostForm
+//             userId={mockUser.userId}
+//             onSuccess={() => setPage("feed")}
+//           />
+//         )}
+//         {page === "detail" && selectedPostId && (
+//           <PostDetail
+//             postId={selectedPostId}
+//             currentUserId={mockUser.userId}
+//             onBack={() => setPage("feed")}
+//           />
+//         )}
+//         {page === "admin" && <AdminDashboard />}
+//       </main>
+//     </div>
+//   );
+// }
+
+// export default App;
